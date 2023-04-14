@@ -7,12 +7,19 @@
     <title>Клиент-серверное приложение</title>
 </head>
 <body>
+    <form action="insertStudent.php" method="post">
+        <input type="text" name='fname' id='fname' placeholder='enter your first name' required><br>
+        <input type="text" name='lname' id='lname' placeholder='enter your second name' required><br>
+        <input type="number" name='age' id='age' placeholder='enter your age' required><br>
+        <input type="radio" name='gender' id='m' value='m'>
+        <label for="m">man</label>
+        <input type="radio" name='gender' id='f' value='f'>
+        <label for="f">woman</label>
+        <input type="submit" value='add'>
+    </form>
 <?php
 
-define("HOST","localhost");
-define("USER","root");
-define("PASSWORD","root");
-define("DB","school");
+require_once ('config.php');
 
 //соединение с БД
 $connect = new mysqli(HOST, USER, PASSWORD, DB);
